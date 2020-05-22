@@ -1,0 +1,145 @@
+<!DOCTYPE html><html lang="zh-Hans" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>2019 Robocup 赛后总结 | 吾人为学</title><meta name="description" content="2019 Robocup 赛后总结  任对方调得激烈，我方自是唠的火热。倒也是挺符合我们的队名：不管怎么样反正NAO就队!  一上周我们有幸代表郑州大学去绍兴参加2019年Robocup中国赛。 作为第一次参加的队伍，我们今年的准备并不充分。一开始大家并没有使用BHuman平台，而是从网上找的各种资料来用Python自己造轮子。从寒假到3月底，我们用了足足三个月的时间造了一个不那么圆的轮子……直到"><meta name="keywords" content="赛后总结"><meta name="author" content="吾人为学"><meta name="copyright" content="吾人为学"><meta name="format-detection" content="telephone=no"><link rel="shortcut icon" href="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/learn.png"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="dns-prefetch" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="https://www.google-analytics.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://www.google-analytics.com"/><link rel="preconnect" href="https://hm.baidu.com"/><link rel="dns-prefetch" href="https://hm.baidu.com"/><link rel="preconnect" href="http://ta.qq.com"/><link rel="dns-prefetch" href="http://ta.qq.com"/><link rel="preconnect" href="https://fonts.googleapis.com" crossorigin="crossorigin"/><link rel="dns-prefetch" href="https://fonts.googleapis.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="dns-prefetch" href="//busuanzi.ibruce.info"/><meta name="google-site-verification" content="m82tUH52wtbkagGRS7FSX2Nfpzq0eeI_ypgCEJOjRPc"/><meta name="msvalidate.01" content="D850D2B66C20B2440935AB6C384F6B6C"/><meta name="baidu-site-verification" content="yKgRLj51L9"/><meta name="twitter:card" content="summary"><meta name="twitter:title" content="2019 Robocup 赛后总结"><meta name="twitter:description" content="2019 Robocup 赛后总结  任对方调得激烈，我方自是唠的火热。倒也是挺符合我们的队名：不管怎么样反正NAO就队!  一上周我们有幸代表郑州大学去绍兴参加2019年Robocup中国赛。 作为第一次参加的队伍，我们今年的准备并不充分。一开始大家并没有使用BHuman平台，而是从网上找的各种资料来用Python自己造轮子。从寒假到3月底，我们用了足足三个月的时间造了一个不那么圆的轮子……直到"><meta name="twitter:image" content="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/photo-of-toronto-cityscape-at-night-2478248.jpg"><meta property="og:type" content="article"><meta property="og:title" content="2019 Robocup 赛后总结"><meta property="og:url" content="https://mtics.top/robocup-summary/"><meta property="og:site_name" content="吾人为学"><meta property="og:description" content="2019 Robocup 赛后总结  任对方调得激烈，我方自是唠的火热。倒也是挺符合我们的队名：不管怎么样反正NAO就队!  一上周我们有幸代表郑州大学去绍兴参加2019年Robocup中国赛。 作为第一次参加的队伍，我们今年的准备并不充分。一开始大家并没有使用BHuman平台，而是从网上找的各种资料来用Python自己造轮子。从寒假到3月底，我们用了足足三个月的时间造了一个不那么圆的轮子……直到"><meta property="og:image" content="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/photo-of-toronto-cityscape-at-night-2478248.jpg"><meta property="article:published_time" content="2019-04-24T12:13:39.000Z"><meta property="article:modified_time" content="2020-05-22T12:42:55.791Z"><script src="https://cdn.jsdelivr.net/npm/js-cookie/dist/js.cookie.min.js"></script><script>var autoChangeMode = '1'
+var t = Cookies.get("theme")
+if (autoChangeMode == '1'){
+  var isDarkMode = window.matchMedia("(prefers-color-scheme: dark)").matches
+  var isLightMode = window.matchMedia("(prefers-color-scheme: light)").matches
+  var isNotSpecified = window.matchMedia("(prefers-color-scheme: no-preference)").matches
+  var hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+  if (t === undefined){
+    if (isLightMode) activateLightMode()
+    else if (isDarkMode) activateDarkMode()
+    else if (isNotSpecified || hasNoSupport){
+      console.log('You specified no preference for a color scheme or your browser does not support it. I Schedule dark mode during night time.')
+      var now = new Date()
+      var hour = now.getHours()
+      var isNight = hour < 6 || hour >= 18
+      isNight ? activateDarkMode() : activateLightMode()
+  }
+  } else if (t == 'light') activateLightMode()
+  else activateDarkMode()
+
+} else if (autoChangeMode == '2'){
+  now = new Date();
+  hour = now.getHours();
+  isNight = hour < 6 || hour >= 18
+  if(t === undefined) isNight? activateDarkMode() : activateLightMode()
+  else if (t === 'light') activateLightMode()
+  else activateDarkMode() 
+} else {
+  if ( t == 'dark' ) activateDarkMode()
+  else if ( t == 'light') activateLightMode()
+}
+
+function activateDarkMode(){
+  document.documentElement.setAttribute('data-theme', 'dark')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+    document.querySelector('meta[name="theme-color"]').setAttribute('content','#000')
+  }
+}
+function activateLightMode(){
+  document.documentElement.setAttribute('data-theme', 'light')
+  if (document.querySelector('meta[name="theme-color"]') !== null){
+  document.querySelector('meta[name="theme-color"]').setAttribute('content','#fff')
+  }
+}</script><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@latest/css/font-awesome.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="canonical" href="https://mtics.top/robocup-summary/"><link rel="prev" title="《微机原理与接口技术》第一章" href="https://mtics.top/the-principle-of-microcomputer-chp1/"><link rel="next" title="《计算机网络》——第二章总结" href="https://mtics.top/computer-network-chp2/"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/gitalk/dist/gitalk.min.css"><script src="https://cdn.jsdelivr.net/npm/gitalk@latest/dist/gitalk.min.js"></script><script src="https://cdn.jsdelivr.net/npm/blueimp-md5/js/md5.min.js"></script><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?c7f0af6fe5ae1be041f2bcfa7d289353";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ga('create', 'UA-127067926-6', 'auto');
+ga('send', 'pageview');
+</script><script src="https://tajs.qq.com/stats?sId=66531240" charset="UTF-8"></script><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Titillium+Web"><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"cookieDomain":"https://xxx/","msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  copy: {
+    success: 'Copy successfully',
+    error: 'Copy error',
+    noSupport: 'The browser does not support'
+  },
+  bookmark: {
+    message_prev: 'Press',
+    message_next: 'to bookmark this page'
+  },
+  runtime_unit: 'days',
+  runtime: true,
+  copyright: undefined,
+  ClickShowText: undefined,
+  medium_zoom: false,
+  fancybox: true,
+  Snackbar: undefined,
+  baiduPush: false,
+  highlightCopy: true,
+  highlightLang: true,
+  highlightShrink: 'false',
+  isFontAwesomeV5: false,
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isanchor: false
+  
+}</script><script>var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isSidebar: true  
+  }</script><noscript><style>
+#page-header {
+  opacity: 1
+}
+.justified-gallery img{
+  opacity: 1
+}
+</style></noscript><meta name="generator" content="Hexo 4.2.1"></head><body><div id="mobile-sidebar"><div id="menu_mask"></div><div id="mobile-sidebar-menus"><div class="mobile_author_icon"><img class="avatar-img" src="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/avatar.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="mobile_post_data"><div class="mobile_data_item is-center"><div class="mobile_data_link"><a href="/archives/"><div class="headline">Articles</div><div class="length_num">33</div></a></div></div><div class="mobile_data_item is-center">      <div class="mobile_data_link"><a href="/tags/"><div class="headline">Tags</div><div class="length_num">13</div></a></div></div><div class="mobile_data_item is-center">     <div class="mobile_data_link"><a href="/categories/"><div class="headline">Categories</div><div class="length_num">9</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-newspaper" aria-hidden="true"></i><span> Blog</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div></div></div><i class="fa fa-arrow-right on" id="toggle-sidebar" aria-hidden="true">     </i><div id="sidebar"><div class="sidebar-toc"><div class="sidebar-toc__title">Catalog</div><div class="sidebar-toc__progress"><span class="progress-notice">You've read</span><span class="progress-num">0</span><span class="progress-percentage">%</span><div class="sidebar-toc__progress-bar">     </div></div><div class="sidebar-toc__content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#2019-Robocup-赛后总结"><span class="toc-number">1.</span> <span class="toc-text">2019 Robocup 赛后总结</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#一"><span class="toc-number">1.1.</span> <span class="toc-text">一</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#二"><span class="toc-number">1.2.</span> <span class="toc-text">二</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#三"><span class="toc-number">1.3.</span> <span class="toc-text">三</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#四"><span class="toc-number">1.4.</span> <span class="toc-text">四</span></a></li></ol></li></ol></div></div></div><div id="body-wrap"><div class="post-bg" id="nav" style="background-image: url(https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/photo-of-toronto-cityscape-at-night-2478248.jpg)"><div id="page-header"><span class="pull_left" id="blog_name"><a class="blog_title" id="site-name" href="/">吾人为学</a></span><span class="pull_right menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fa fa-home"></i><span> Home</span></a></div><div class="menus_item"><a class="site-page"><i class="fa-fw fas fa-newspaper" aria-hidden="true"></i><span> Blog</span><i class="fa fa-chevron-down menus-expand" aria-hidden="true"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/categories/"><i class="fa-fw fa fa-folder-open"></i><span> Categories</span></a></li><li><a class="site-page" href="/archives/"><i class="fa-fw fa fa-archive"></i><span> Archives</span></a></li><li><a class="site-page" href="/tags/"><i class="fa-fw fa fa-tags"></i><span> Tags</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fa fa-link"></i><span> Link</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fa fa-heart"></i><span> About</span></a></div></div><span class="toggle-menu close"><a class="site-page"><i class="fa fa-bars fa-fw" aria-hidden="true"></i></a></span></span></div><div id="post-info"><div id="post-title"><div class="posttitle">2019 Robocup 赛后总结</div></div><div id="post-meta"><div class="meta-firstline"><time class="post-meta__date"><span class="post-meta__date-created" title="Created 2019-04-24 20:13:39"><i class="fa fa-calendar" aria-hidden="true"></i> Created 2019-04-24</span><span class="post-meta__separator">|</span><span class="post-meta__date-updated" title="Updated 2020-05-22 20:42:55"><i class="fa fa-history" aria-hidden="true"></i> Updated 2020-05-22</span></time><span class="post-meta__categories"><span class="post-meta__separator">|</span><i class="fa fa-inbox post-meta__icon" aria-hidden="true"></i><a class="post-meta__categories" href="/categories/%E7%94%9F%E6%B4%BB%E9%9A%8F%E7%AC%94/">生活随笔</a></span></div><div class="meta-secondline"> </div><div class="meta-thirdline"><span class="post-meta-pv-cv"><i class="fa fa-eye post-meta__icon" aria-hidden="true"> </i><span>Post View:</span><span id="busuanzi_value_page_pv"></span></span><span class="post-meta-commentcount"><span class="post-meta__separator">|</span><i class="post-meta__icon fa fa-comment-o" aria-hidden="true"></i><span>Comments:</span><a href="/robocup-summary/#post-comment"><span class="gitalk-comment-count comment-count"></span></a></span></div></div></div></div><main class="layout_post" id="content-inner"><article id="post"><div class="post-content" id="article-container"><h1 id="2019-Robocup-赛后总结"><a href="#2019-Robocup-赛后总结" class="headerlink" title="2019 Robocup 赛后总结"></a>2019 Robocup 赛后总结</h1><p><img src="http://storage.qiniu.aspi.tech/2019robocup/%E8%B5%9B%E5%90%8E%E5%90%88%E7%85%A7.jpg" alt=""></p>
+<blockquote>
+<p>任对方调得激烈，我方自是唠的火热。倒也是挺符合我们的队名：不管怎么样反正NAO就队!</p>
+</blockquote>
+<h2 id="一"><a href="#一" class="headerlink" title="一"></a>一</h2><p>上周我们有幸代表郑州大学去绍兴参加2019年Robocup中国赛。</p>
+<p>作为第一次参加的队伍，我们今年的准备并不充分。一开始大家并没有使用BHuman平台，而是从网上找的各种资料来用Python自己造轮子。从寒假到3月底，我们用了足足三个月的时间造了一个不那么圆的轮子……直到三月底政乔跟其他学校交流，我们才知道大部分队伍用的是BHuman平台。</p>
+<p>四月初，在我和政乔去同济学习回来后，我们才算是真正开始准备本次比赛。而此时，距大赛开始只有不到半个月的时间。</p>
+<p>因为只有半个月的时间，所以太过仓促了。BHuman平台中的许多调试工具都没用上，购买的绿毯也比正式比赛的场地要硬得多……在学校调试的防守员下坐防御动作在比赛场地上根本不能用，只要下坐就会往前倒。临出发前，5号的头部风扇一直嗡嗡响，备用机6号也出了问题，一直到出发也没再能拿出一台备用机。</p>
+<p>总之，仓促之中我们就此出战。</p>
+<h2 id="二"><a href="#二" class="headerlink" title="二"></a>二</h2><p><img src="http://storage.qiniu.aspi.tech/2019robocup/%E4%BC%9A%E5%9C%BA%E5%90%88%E7%85%A7.jpg" alt="会场合照"></p>
+<p>初到绍兴，才发现这里不愧是南方水乡。城市中到处都有河流穿过，站在桥上迎着吹来的风还是挺凉爽的~</p>
+<p>这次比赛和以往比赛相比规格真的高得多。会场服务十分到位，每天都有班车接送，宾馆也提供早餐，报道注册时还送了很多小东西。</p>
+<p>绍兴这个地方我觉得很神奇，明明人很少，住宅区看上去也不是很高大上，但是附近的商场却很漂亮。然而直到晚上，我们一群男生去寻找网吧时才明白，这附近的商业并没有看上去那么发达。好多店都关门了，不仅仅是网吧，甚至商场里的饭店也是。柯桥区的商业有种让人觉得金玉其外，败絮其中的感觉。</p>
+<p><img src="http://storage.qiniu.aspi.tech/2019robocup/%E5%AE%BE%E9%A6%86%E5%B0%8F%E5%8D%A1%E7%89%87.jpg" alt="宾馆小卡片"><br>夜晚的宾馆也是让人觉得没有那么舒服。且不说住了这么久的宾馆第一次碰到有人塞小卡片，每晚凌晨时分都有人在走廊大声说话。住了五晚，我没有一晚是能睡踏实的……</p>
+<h2 id="三"><a href="#三" class="headerlink" title="三"></a>三</h2><p>比赛耗时三天，算上调试一共是四天。我们因为没有带备用机，所以只在调试那一天，针对场地适应性进行了调整，后期都是在电脑上用SimRobot调整参数。这也就导致了后面比赛的三天里，所有队伍都在场上紧张刺激地进行调试，只有我们坐在场边唠嗑~这一唠，就唠了三天……</p>
+<p>说来惭愧，因为是首秀，对其他学校的实力没有一个认知，我们在开始比赛前一直担心能否赢至少一场拿个三等奖……赢了华师的时候，又听说集美大学弃赛，这就代表我们能赢至少两场。换言之，三等奖稳了。然而对上上交，还是没能赢。怎么说呢，不愧是去年亚军。</p>
+<p>第一天16进12，我们已经觉得很幸运了，而且也已经达成了我们的预期目标，所以后来基本就没什么压力，大家唠嗑唠地更开心了~</p>
+<p>第二天12进8。踢厦大那场基本没什么压力。但是踢武大那场状态不断。先是边裁吹哨被主裁以为是对场吹的，结果没有点Play。我们在set情况下30多秒就踢进了一球，却没办法加分。还好李树老师裁决进球有效。然而后来我方5号就坏了……前期在学校调试，把5号散热扇摔坏了。没想到这个时候爆发出来问题了，导致对武大这场1：2输了……不过好在后来厦大踢赢了武大，我们也能够出线。</p>
+<p>8进4时对上南京邮电大学，当时我们已经能够稳拿二等奖，又看着南邮在场上调地热火朝天，我们在场边唠嗑的时候还想着这次已经赚了，估摸着第二天就能出去旅游了。比赛时，和身边的南邮老哥还在说估计我们明天就能出去旅游……结果后面又赢了，说来挺对不起那老哥的，毕竟当面扎心……晚上半决赛又对上了上交，毫无疑问的输了。</p>
+<p>最后一天是和西北民族大学竞争第三名，上半场四号又坏了，被西民抓住机会抢先进了一球。下半场四号调整完毕，5台NAO相互配合，算是踢进了一球，扳平了比分。之前万万没想过我们会踢出平局需要点球，不过西民也没想到，大家准备的都不充分。休息的五分钟里，我提议直接烧BHuman提供的例程Striker，没想到还挺好用的，也得亏西民的守门员一直往边界走，我们才能做到三球三进，最终夺得季军。</p>
+<h2 id="四"><a href="#四" class="headerlink" title="四"></a>四</h2><p><img src="http://storage.qiniu.aspi.tech/2019robocup/%E5%A5%96%E6%9D%AF.jpg" alt="奖杯"></p>
+<p>这次比赛，因为是郑州大学的首秀，我们自身压力也没那么大，所以在看到别人激烈地调机器时，还能愉快地唠嗑，最终唠出季军~</p>
+<p>所以说这次比赛和我们没什么关系，都是NAO自己努力的结果~</p>
+</div><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">Author: </span><span class="post-copyright-info"><a href="mailto:undefined">吾人为学</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">Link: </span><span class="post-copyright-info"><a href="https://mtics.top/robocup-summary/">https://mtics.top/robocup-summary/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">Copyright Notice: </span><span class="post-copyright-info">All articles in this blog are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener">CC BY-NC-SA 4.0</a> unless stating additionally.</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E8%B5%9B%E5%90%8E%E6%80%BB%E7%BB%93/">赛后总结</a></div><div class="post_share"><div class="social-share" data-image="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/man-in-black-jacket-standing-beside-woman-in-black-jacket-3960076.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"/><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js"></script></div></div><div class="post-reward"><a class="reward-button button--primary button--animated"> <i class="fa fa-qrcode"></i> Donate<div class="reward-main"><ul class="reward-all"><li class="reward-item"><img class="post-qr-code__img" src="/img/wechat.jpg" alt="微信"/><div class="post-qr-code__desc">微信</div></li><li class="reward-item"><img class="post-qr-code__img" src="/img/alipay.jpg" alt="支付寶"/><div class="post-qr-code__desc">支付寶</div></li></ul></div></a></div><nav class="pagination_post" id="pagination"><div class="prev-post pull_left"><a href="/the-principle-of-microcomputer-chp1/"><img class="prev_cover" src="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/black-ball-point-pen-on-white-notebook-158771.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Previous Post</div><div class="prev_info">《微机原理与接口技术》第一章</div></div></a></div><div class="next-post pull_right"><a href="/computer-network-chp2/"><img class="next_cover" src="https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/a-city-during-sunset.jpg" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">Next Post</div><div class="next_info">《计算机网络》——第二章总结</div></div></a></div></nav><hr><div id="post-comment"><div class="comment_headling"><i class="fa fa-comments fa-fw" aria-hidden="true"></i><span> Comment</span></div><div id="gitalk-container"></div><script>var gitalk = new Gitalk({
+  clientID: 'cda9cb331b5fc4dbabb0',
+  clientSecret: 'c2dd9eab2c2ff2e1930b2229eab89d2b2ce76f81',
+  repo: 'mtics.gtihub.io',
+  owner: 'mtics',
+  admin: ['mtics'],
+  id: md5(decodeURI(location.pathname)),
+  language: 'zh-CN',
+  perPage: 10,
+  distractionFreeMode: false,
+  pagerDirection: 'last',
+  createIssueManually: false,
+  updateCountCallback: commentCount
+})
+gitalk.render('gitalk-container')
+
+function commentCount(n){
+  try {
+    document.getElementsByClassName('gitalk-comment-count')[0].innerHTML= n
+  } catch (e) {
+    return false
+  }
+}</script></div></article></main><footer id="footer" style="background-image: url(https://aspi.oss-cn-beijing.aliyuncs.com/blog/pic/mtics.top/photo-of-toronto-cityscape-at-night-2478248.jpg)" data-type="photo"><div id="footer-wrap"><div class="copyright">&copy;2017 - 2020 By 吾人为学</div><div class="framework-info"><span>Driven </span><a href="https://hexo.io" target="_blank" rel="noopener"><span>Hexo</span></a><span class="footer-separator">|</span><span>Theme </span><a href="https://github.com/jerryc127/hexo-theme-butterfly" target="_blank" rel="noopener"><span>Butterfly</span></a></div><div class="footer_custom_text">心随入微，笃实光辉</div></div></footer></div><section class="rightside" id="rightside"><div id="rightside-config-hide"><i class="fa fa-book" id="readmode" title="Read Mode"></i><i class="fa fa-plus" id="font_plus" title="Increase font size"></i><i class="fa fa-minus" id="font_minus" title="Decrease font size"></i><a class="translate_chn_to_cht" id="translateLink" href="javascript:translatePage();" title="Traditional Chinese and Simplified Chinese Conversion" target="_self">繁</a><i class="darkmode fa fa-moon-o" id="darkmode" title="Dark Mode"></i></div><div id="rightside-config-show"><div id="rightside_config" title="Setting"><i class="fa fa-cog" aria-hidden="true"></i></div><a id="to_comment" href="#post-comment" title="Scroll to comment"><i class="scroll_to_comment fa fa-comments">  </i></a><i class="fa fa-list-ul close" id="mobile-toc-button" title="Table of Contents" aria-hidden="true"></i><i class="fa fa-arrow-up" id="go-up" title="Back to top" aria-hidden="true"></i></div></section><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.js"></script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page@3/instantpage.min.js" type="module"></script></body></html>
